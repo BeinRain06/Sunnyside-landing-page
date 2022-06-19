@@ -1,0 +1,839 @@
+@import url('https://fonts.google.com/specimen/Barlow');
+@import url('https://fonts.google.com/specimen/Fraunces');
+
+:root{
+/* primary */
+
+  --soft-red:hsl(7, 99%, 70%);
+  --yellow: hsl(51, 100%, 49%);
+  --dark-desatured-cyan: hsl(167, 40%, 24%);
+  --dark-blue: hsl(198, 62%, 26%);
+  --dark-moderate-cyan: hsl(168, 34%, 41%);
+
+/* neutral */
+  --very-dark-desatured-blue: hsl(212, 27%, 19%);
+  --very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --dark-grayish-blue: hsl(232, 10%, 55%);
+  --grayish-blue: hsl(210, 4%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --broken-white: hsla(0, 30%, 96%, 0.37);
+
+}
+
+/* universal selector */
+
+*, *::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Fraunces', serif;
+  font-weight: 700, 900;
+}
+body{
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: lighter;
+}
+p{
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+  opacity: 0.8;
+}
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+.bg_straight1{
+  background: var(--yellow);
+  opacity: 0.3;
+}
+.bg_straight2{
+  background: var(--soft-red);
+  opacity: 0.3;
+}
+
+.b_white{
+  color: var(--white);
+}
+
+.b_blue{
+  color: var(--dark-desatured-cyan);
+}
+.mg_t{
+  margin-top: 3.8rem;
+}
+.pd_t{
+  padding-top: 0.4rem;
+}
+.pd_tb{
+  padding: 2.3rem 0;
+}
+.pd_end1{
+  padding: 0 1.5rem;
+}
+
+.ski_link{
+  color:var(--very-dark-desatured-blue);
+  font-size: 16px;
+  
+}
+.straight_bar{
+  position: relative;
+  top: -0.4rem;
+  width: 80px;
+  height: 10px;
+  border-radius: 32px;
+}
+
+.active{
+  padding: 0.5rem 1.2rem;
+  background: var(--broken-white);
+  border-radius: 24px;
+}
+
+.active_me{
+  padding: 0.5rem 1.2rem;
+  background: var(--yellow);
+  border-radius: 24px;
+}
+
+.burger{
+  padding: 1rem 0;
+}
+.nav_burg{
+  color: var(--very-dark-desatured-blue);
+}
+
+/* end universal selector */
+
+
+/* none displayed first */
+.nav_mobile{
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+}
+.hamburger{
+  display: none;
+  position: relative;
+  top: 0.3rem;
+}
+
+/* hamburger style */
+
+.hamburger > div{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 2px;
+  background: var(--white);
+}
+.hamburger > div::before, .hamburger > div::after{
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 44px;
+  height: 2px;
+  background: var(--white);
+}
+
+.hamburger > div::before{
+  top: -10px;
+}
+
+
+.nav_mobile .logo1 img{
+  position: relative;
+  top: 1.5rem;
+}
+
+.nav_mobile .menu content{ 
+  position: absolute;
+  flex-direction: column;
+ 
+}
+.nav_mobile .menu_content ul{ 
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  top: 4.6rem;
+  left: 1.6rem;
+  width: 88vw;
+  height: 45vh;
+  background: var(--white);
+  justify-content: center;
+  text-align: center;
+  z-index: 3;
+}
+
+
+.nav_mobile .menu ul a{
+  margin: 1rem 0;
+}
+.toggler{
+  position: absolute;
+  top: 0.2rem;
+  left: 87%;
+  width: 36px;
+  height: 40px;
+  opacity: 0;
+  z-index: 100;
+}
+/* white arrow  hamburger*/
+
+.pointer{
+  position: relative;
+  display: none;
+  top: 2rem;
+  left: 22%;
+  width: 0px;
+  height: 0px;
+  background: var(--white);
+  
+}
+.pointer::after{
+
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -0.4rem;
+  left: -0.7rem;
+  border-width: 24px 32px 0 0;
+  border-color: transparent var(--white) transparent transparent;
+  border-style: solid;
+  z-index: 3;
+}
+
+
+
+/* end hamburger menu */
+
+body{
+  font-size: 18px;
+}
+
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.products_mobile{
+  display: none;
+}
+.skills_mobile{
+  display: none;
+}
+
+/* sunny home */
+
+.sunny{
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: hsl(175, 83%, 36%);
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/desktop/image-header.jpg') no-repeat center center/cover; 
+  z-index: 100;
+}
+
+
+.sunny .nav_bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: inherit;
+  height: inherit;
+  margin: 1.4rem 3.4rem;
+}
+
+.sunny .nav_bar .logo, .sunny .nav_mobile .logo1{
+  position: relative;
+  top: -0.3rem;
+  object-fit: cover;
+  width: 100px;
+  height: 50px;
+  
+  
+}
+
+.sunny .nav_bar  ul{
+  display: flex;
+  flex-direction: row;
+}
+.sunny .nav_bar ul li a{
+  margin-left: 2.8rem;
+}
+
+.sunny  .home_content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  font-size: 32px;
+ 
+}
+
+.sunny .home_content .arrow_down{
+  
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.sunny .home_content .arrow{
+  position: absolute;
+  top: 21.5rem;
+  width: 20px;
+  height: 100px;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* section skills */
+
+.skills{
+  position: relative;
+  height: 220vh;
+  width: 100vw; 
+  align-items: center;
+  justify-content: center;
+}
+
+/* main grid styles */
+
+.skills .main_grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 4fr);
+  height: 220vh;
+}
+
+
+.skill_1{
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+  object-fit: cover;
+}
+.skill_2{
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  background: url('../images/desktop/image-transform.jpg') no-repeat center center/cover;
+  background-size:  auto;
+  object-fit: cover;
+}
+.skill_3{
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+  background: url('../images/desktop/image-stand-out.jpg') no-repeat center center/cover;
+  background-size:  auto;
+  object-fit: cover;
+}
+.skill_4{
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
+  object-fit: cover;
+}
+.skill_5{
+  grid-column: 1/span 1;
+  grid-row: 3/span 1;
+  background: url('../images/desktop/image-graphic-design.jpg') no-repeat center center/cover;
+  background-size:  auto;
+  object-fit: cover;
+}
+.skill_6{
+  grid-column: 2/span 1;
+  grid-row: 3/span 1;
+  background: url('../images/desktop/image-photography.jpg') no-repeat center center/cover;
+  background-size:  auto;
+  object-fit: cover;
+}
+
+.skills .main_grid .box_1 .skill_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 420px;
+  align-items: left;
+  text-align: left; 
+  margin: 0 auto;
+}
+
+.skills .main_grid .skill_5 .skill_content {
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center; 
+  max-width: 400px;
+}
+.skills .main_grid .skill_6 .skill_content {
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center; 
+  max-width: 360px;
+}
+
+/* testimonials */
+
+.testimonials{
+  width: 100vw;
+  height: 106vh;
+}
+
+.testimonials .title{
+  text-align: center;
+  justify-content: center;
+  margin: 8.5rem auto;
+  max-width: 300px;
+}
+.testimonials .columns{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.testimonials .columns .column{
+  flex-basis: 30%;
+  margin: 0 0.5rem;
+}
+
+.testimonials  .column img{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+.testimonials  .column > p{
+  line-height: 1.6;
+}
+
+
+/* products */
+
+.products{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+}
+
+.flex_pro{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.products .flex_pro .product{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+}
+
+.products .flex_pro .product img{
+  display: flex;
+  flex-direction: column;
+  max-width: 25vw;
+  object-fit: cover;
+  height: 50vh;
+  overflow: hidden;
+}
+
+/* footer */
+
+footer{
+  position: relative;
+  width: 100vw;
+  height: 320px;
+  margin: 0 auto;
+  background: var(--dark-moderate-cyan); 
+}
+
+
+.sunny_services{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sunny_services .sun_logo{
+  position: relative;
+  top: 3.5rem;
+  left: 0;
+  max-width: 500px;
+  height: 110px;
+  margin: 0 auto;
+  background-image: var(--very-dark-desatured-blue);
+}
+
+
+
+.sunny_services .sunny_day,  .sunny_friendship{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sunny_services .sunny_day .sun_day{
+  margin: 0 2rem;
+  color: var(--very-dark-desatured-blue);
+}
+.sunny_friendship{
+  margin: 5rem 0 0 2rem;
+}
+
+ .sunny_friendship .sunny_media{
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 4%;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color:var(--white) }
+
+@media(max-width:960px){
+
+  .sunny{
+    height: 75vh;
+  }
+
+  .skills{
+    position: relative;
+    height: 180vh;
+  }
+  .skills .main_grid{
+    height: 180vh;
+  }
+
+  .skills .main_grid .box_1 .skill_content {
+    max-width: 340px; 
+    margin: 0 auto;
+  }
+
+  .skills .main_grid .skill_5 .skill_content, .skills .main_grid .skill_6 .skill_content{
+    font-size: 17px;
+  }
+
+
+  .testimonials .columns .column p{
+    font-size: 12px;
+  }
+  .testimonials .columns .column {
+    min-width: 16vw;
+    font-size: 12px;
+  }
+
+}
+
+@media(max-width:760px){
+  .testimonials{
+    width: 100vw;
+    height: 72vh;
+  }
+
+  .skills{
+    position: relative;
+    height: 165vh;
+  }
+  .skills .main_grid{
+    height: 165vh;
+  }
+  .skills .main_grid .box_1 .skill_content {
+    max-width: 280px; 
+    margin: 0 auto;
+  }
+
+}
+
+@media (min-width:601px) and (max-width:759px) {
+
+  .skills .main_grid .box_1 .skill_content {
+    max-width: 220px; 
+    margin: 0 auto;
+  }
+  .skills .main_grid .skill_5 .skill_content, .skills .main_grid .skill_6 .skill_content{
+    max-width: 270px; 
+    margin: 0 auto;
+  }
+
+  .testimonials .columns .column {
+    min-width: 15vw;
+    font-size: 11px;
+  }
+  .skills{
+    position: relative;
+    height: 150vh;
+  }
+  .skills .main_grid{
+    height: 150vh;
+  }
+
+  .skills .main_grid .skill_5 .skill_content, .skills .main_grid .skill_6 .skill_content{
+    font-size: 14px;
+  }
+
+  
+
+  .testimonials .title{
+    text-align: center;
+    justify-content: center;
+    margin: 6.5rem auto;
+    max-width: 300px;
+    font-weight: lighter;
+  }
+  .testimonials .title h3{
+    font-weight: lighter;
+  }
+
+  .testimonials .columns .column p{
+    font-size: 12px;
+  }
+
+  .products{
+    height: 30vh;
+  }
+
+  .sunny_friendship{
+    margin: 3.5rem 0 0 2rem;
+  } 
+}
+
+@media(max-width:600px){
+
+  .sunny .home_content .arrow{
+    top: 17.5rem;
+  }
+
+  .sunny .nav_bar{
+    display: none;
+  }
+ 
+  .nav_mobile{
+    display: flex;
+  }
+
+ .hamburger{
+    display: block;
+  }
+ 
+  .mg_t{
+    margin-top: 1.6rem;
+  }
+  .mg_tb{
+    margin: 5rem 0 2rem 0;
+  }
+
+  .pd_t{
+    padding-top: 0.4rem;
+  }
+
+  .sunny  .home_content{
+    font-size: 26px;
+  }
+
+ 
+  .skills{
+    position: relative;
+    height: 235vh;
+    width: 100vw;
+  }
+  .skills .main_grid{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 2fr);
+    height: 235vh;
+    width: 100vw;
+  }
+
+  .skill_1{
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+  }
+  .skill_2{
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    background: url('../images/mobile/image-transform.jpg') no-repeat center center/cover;
+  }
+  .skill_3{
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
+    background: url('../images/mobile/image-stand-out.jpg') no-repeat center center/cover;
+  }
+  .skill_4{
+    grid-column: 1/span 1;
+    grid-row: 4/span 1;
+  }
+  .skill_5{
+    grid-column: 1/span 1;
+    grid-row: 5/span 1;
+    background: url('../images/mobile/image-graphic-design.jpg') no-repeat center center/cover;
+  }
+  .skill_6{
+    grid-column: 1/span 1;
+    grid-row: 6/span 1;
+    background: url('../images/mobile/image-photography.jpg') no-repeat center center/cover;
+  }
+
+  .testimonials{
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    height: 162vh;
+    margin: 0 auto;
+  }
+
+  .testimonials .title{
+    margin: 3.5rem auto;
+    padding-right: 1.4rem;
+    max-width: 300px;
+  }
+
+  .testimonials .columns{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .testimonials .columns .column{
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .testimonials .columns :first-child .mg_tb{
+    margin: 3rem 0 2rem 0;
+  }
+
+  .testimonials  .column > p{
+    line-height: 1.6;
+    margin: 0 1rem;
+    width: 65vw;
+  }
+
+  .testimonials  .column img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+
+  /* products mobile design */
+  .products{
+    display: none;
+  }
+
+  .products_mobile{
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60vh;
+  }
+  
+  .flex_prom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .products_mobile .flex_prom .column_m {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    height: 60vh;
+  }
+
+  .products_mobile .flex_prom .column_m .productm{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    height: 30vh;
+  }
+  
+  .products_mobile .flex_prom .productm img{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 30vh;
+    /* width: 100%; */
+    object-fit: cover;
+    /* height: 100%; */
+    overflow: hidden;
+  }
+
+  footer{
+    
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 320px;
+    margin: 0 auto;
+   
+  }
+
+  .sunny_services .sunny_day .sun_day{
+    font-size: 15px;
+  }
+
+  .sunny_friendship .sunny_media{
+    flex-basis: 10%;
+  }
+  
+}
+
+@media(max-width:400px){
+  body{
+    position: relative;
+    left: 0.5rem;
+  }
+
+  .pd_tb{
+    padding: 1.6rem 0;
+  }
+
+  .testimonials  .column > p{
+    line-height: 1.6;
+    max-width: 300px;
+  }
+
+  .testimonials .columns :first-child .mg_tb{
+    margin: 1.8rem 0 2rem 0;
+  }
+
+  .sunny_services .sunny_day .sun_day{
+    margin: 0 1rem;
+
+  }
+  
+}
+
+
+
+
+
+
+
